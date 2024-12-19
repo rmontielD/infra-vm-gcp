@@ -1,0 +1,23 @@
+infrastructure:
+  virtual_machines:
+    - name: "vm-web"
+      machine_type: "e2-medium"
+      zone: "us-central1-a"
+      boot_disk:
+        image: "debian-cloud/debian-11"
+        size_gb: 20
+      network_tags:
+        - "http-server"
+        - "https-server"
+      startup_script: |
+        #!/bin/bash
+        apt-get update
+        apt-get install -y nginx
+    - name: "vm-db"
+      machine_type: "e2-standard-2"
+      zone: "us-central1-a"
+      boot_disk:
+        image: "debian-cloud/debian-11"
+        size_gb: 50
+      network_tags:
+        - "postgresql" 

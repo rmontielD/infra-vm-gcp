@@ -1,0 +1,31 @@
+# Terraform files
+**/.terraform/*
+.terraform
+.terraform/
+.terraform/**
+**/.terraform/**
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraformrc
+terraform.rc
+.terraform.lock.hcl
+
+# Ignorar específicamente los providers
+**/linux_amd64/**
+**/*provider*
+src/.terraform/providers/**
+**/registry.terraform.io/**
+
+# State directory
+state/
+
+# Logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
